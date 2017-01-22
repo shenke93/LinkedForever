@@ -2,6 +2,7 @@ package com.yunkai.domain;
 
 import java.util.Set;
 
+//Country
 public class Country 
 {
 	private Integer id;
