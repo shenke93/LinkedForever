@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yunkai.domain">
+	<class name="StuUniversity" table="stuUniversity">
+		<id name="id" column="id" type="java.lang.Integer">
+			<generator class="increment" />
+		</id>
+		<property name="year" type="java.lang.Integer">
+			<column name="year" not-null="true" />
+		</property>
+		
+		<many-to-one name="student" column="student_id" />
+		<many-to-one name="university" column="university_id" />
+	</class>
+</hibernate-mapping>
