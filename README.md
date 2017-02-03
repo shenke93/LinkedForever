@@ -1,2 +1,2 @@
-# Projet_JEE
-Struts+Spring+Hibernate
+# LinkedForever
+Alumni Social Network. Project Framework Java/JEE at UVSQ.
