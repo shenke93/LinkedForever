@@ -53,6 +53,12 @@
 	    <groupId>org.apache.struts</groupId>
 	    <artifactId>struts2-core</artifactId>
 	    <version>${org.strutsframework-version}</version>
+	    <exclusions>
+	        <exclusion>
+	            <artifactId>javassist</artifactId>
+	            <groupId>javassist</groupId>
+	        </exclusion>
+	    </exclusions>
 	</dependency>
 	 
 	<dependency>
@@ -65,12 +71,6 @@
 	    <groupId>org.hibernate</groupId>
 	    <artifactId>hibernate-core</artifactId>
 	    <version>${org.hibernateframework-version}</version>
-	    <exclusions>
-	    	<exclusion>
-	    		<groupId>org.javassist</groupId>
-            	<artifactId>javassist</artifactId>
-	    	</exclusion>
-	    </exclusions>
 	</dependency>
 	
 	<dependency>

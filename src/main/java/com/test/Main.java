@@ -13,13 +13,14 @@ public class Main
 //		ProvinceService service = (ProvinceService) ac.getBean("provinceService");
 		TestAction test = (TestAction) ac.getBean("testAction");	
 
-		test.addCityTest();
-		test.listCityTest();
+//		test.addCityTest();
+//		test.listCityTest();
 //		test.addUniversityTest();
+//		test.listUniversityTest();
 //		test.addStudentTest();
-//		test.addCountryTest();
-//		test.listCountryTest();
-//		test.addProvinceTest();
-//		test.listProvinceTest();
+		test.addCountryTest();
+		test.listCountryTest();
+		test.addProvinceTest();
+		test.listProvinceTest();
 	}
 }
