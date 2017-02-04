@@ -10,10 +10,11 @@ public class StudentDAO extends BasicDAO implements IStudentDAO
 {
 	public Student checkStu(Student s) 
 	{
-		String hql = "from Student where id=? and pwd=?";
+		String hql = "from Student where id=:id and pwd=:pwd";
 		Object[] parameters = {s.getId(), s.getPwd()};
+		String[] parameters_name = {"id", "pwd"};
 		
-		return (Student) this.uniqueQuery(hql, parameters);
+		return (Student) this.uniqueQuery(hql, parameters, parameters_name);
 	}
 
 	public List<Student> showStudentList() 
@@ -41,9 +42,10 @@ public class StudentDAO extends BasicDAO implements IStudentDAO
 
 	public Student getStuById(int id) 
 	{
-		String hql = "from Student where id=?";
+		String hql = "from Student where id=:id";
 		Object[] parameters = {id};
+		String[] parameters_name = {"id"};
 		
-		return (Student) this.uniqueQuery(hql, parameters);
+		return (Student) this.uniqueQuery(hql, parameters, parameters_name);
 	}
 }

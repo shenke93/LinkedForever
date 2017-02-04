@@ -8,5 +8,5 @@ public interface IBasicDAO {
 	void update(Object o);
 	List<Object> executeQuery(String hql, Object[] parameters);
 	Object findById(Class<?> clazz, int id);
-	Object uniqueQuery(String hql, Object[] parameters);
+	Object uniqueQuery(String hql, Object[] parameters, String[] parameters_name);
 }

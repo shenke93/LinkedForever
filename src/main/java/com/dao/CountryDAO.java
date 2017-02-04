@@ -10,10 +10,11 @@ public class CountryDAO extends BasicDAO implements ICountryDAO
 {
 	public Country getCountryById(int id) 
 	{
-		String hql = "from Country where id=?";
+		String hql = "from Country where id=:id";
 		Object[] parameters = {id};
+		String[] parameters_name = {"id"};
 		
-		return (Country) this.uniqueQuery(hql, parameters);
+		return (Country) this.uniqueQuery(hql, parameters, parameters_name);
 	}
 
 	public List<Country> showCountryList() 

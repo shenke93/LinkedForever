@@ -10,10 +10,11 @@ public class UniversityDAO extends BasicDAO implements IUniversityDAO
 {
 	public University getUniById(int id) 
 	{
-		String hql = "from University where id=?";
+		String hql = "from University where id=:id";
 		Object[] parameters = {id};
+		String[] parameters_name = {"id"};
 		
-		return (University) this.uniqueQuery(hql, parameters);
+		return (University) this.uniqueQuery(hql, parameters, parameters_name);
 	}
 
 	public List<University> showUniversityList() 

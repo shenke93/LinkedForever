@@ -10,10 +10,11 @@ public class ProvinceDAO extends BasicDAO implements IProvinceDAO
 {
 	public Province getProById(int id) 
 	{
-		String hql = "from Province where id=?";
+		String hql = "from Province where id=:id";
 		Object[] parameters = {id};
+		String[] parameters_name = {"id"};
 		
-		return (Province) this.uniqueQuery(hql, parameters);
+		return (Province) this.uniqueQuery(hql, parameters, parameters_name);
 	}
 
 	public List<Province> showProvinceList() 

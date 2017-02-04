@@ -10,10 +10,11 @@ public class CityDAO extends BasicDAO implements ICityDAO
 {
 	public City getCityById(int id) 
 	{
-		String hql = "from City where id=?";
+		String hql = "from City where id=:id";
 		Object[] parameters = {id};
+		String[] parameters_name = {"id"};
 		
-		return (City) this.uniqueQuery(hql, parameters);
+		return (City) this.uniqueQuery(hql, parameters, parameters_name);
 	}
 
 	public List<City> showCityList() 

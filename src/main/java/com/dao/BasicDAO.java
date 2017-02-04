@@ -54,7 +54,7 @@ public abstract class BasicDAO implements IBasicDAO
 		return sessionFactory.getCurrentSession().get(clazz, id);
 	}
 
-	public Object uniqueQuery(String hql, Object[] parameters)
+	public Object uniqueQuery(String hql, Object[] parameters, String[] parameters_name)
 	{
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
@@ -62,7 +62,7 @@ public abstract class BasicDAO implements IBasicDAO
 		{
 			for(int i=0; i<parameters.length; i++)
 			{
-				query.setParameter(i, parameters[i]);
+				query.setParameter(parameters_name[i], parameters[i]);
 			}
 		}
 		
