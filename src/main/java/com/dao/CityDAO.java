@@ -19,7 +19,7 @@ public class CityDAO extends BasicDAO implements ICityDAO
 
 	public List<City> showCityList() 
 	{
-		String hql = "from Student";
+		String hql = "from City";
 		
 		List<Object> l1 = (List<Object>) this.executeQuery(hql, null);
 		

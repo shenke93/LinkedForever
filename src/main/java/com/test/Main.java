@@ -14,8 +14,9 @@ public class Main
 		TestAction test = (TestAction) ac.getBean("testAction");	
 
 		test.addCityTest();
+		test.listCityTest();
 //		test.addUniversityTest();
-		test.addStudentTest();
+//		test.addStudentTest();
 //		test.addCountryTest();
 //		test.listCountryTest();
 //		test.addProvinceTest();

@@ -100,6 +100,30 @@ public class TestAction
 		iStudentDAO.add(s2);
 	}
 	
+	public void listCityTest() {
+		List<City> list = iCityDAO.showCityList();
+		
+		for (City c : list) {
+			System.out.println(c.getName());
+		}
+	}
+	
+	public void listStudentTest() {
+		List<Student> list = iStudentDAO.showStudentList();
+		
+		for (Student s : list) {
+			System.out.println(s.getName());
+		}
+	}
+	
+	public void listUniversityTest() {
+		List<University> list = iUniversityDAO.showUniversityList();
+		
+		for (University u : list) {
+			System.out.println(u.getName());
+		}
+	}
+	
 	public void listCountryTest() {
 		List<Country> list = iCountryDAO.showCountryList();
 		
