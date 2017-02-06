@@ -86,6 +86,8 @@ public class TestAction
 		s1.setName("Xiaoming");
 		s1.setPwd("666");
 		s1.setTel("01234567");
+		s1.setEmail("xiaoming@gmail.com");
+		s1.setBirthday("13/10/1993");
 		s1.setHomeCity(c);
 		s1.setSex("F");
 
@@ -93,6 +95,7 @@ public class TestAction
 		s2.setName("Laowang");
 		s2.setPwd("111");
 		s2.setTel("987654321");
+		s2.setEmail("laowang@gmail.com");
 		s2.setHomeCity(c);
 		s2.setSex("M");
 
@@ -141,5 +144,9 @@ public class TestAction
 		{
 			System.out.println(p.getName());
 		}
+	}
+	
+	public void testStruts2() {
+		
 	}
 }

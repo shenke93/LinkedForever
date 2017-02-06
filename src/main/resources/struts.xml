@@ -3,9 +3,16 @@
     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
     "http://struts.apache.org/dtds/struts-2.0.dtd">   
 <struts>
-	<package name="LinkedForever" extends="struts-default">
+<constant name="struts.action.extension" value="action,do"/>
+<!-- For develop -->
+<constant name="struts.serve.static.browserCache" value="false"/>
+<constant name="struts.configuration.xml.reload" value="true"/>
+<constant name="struts.devMode" value="true"/>
+
+	<package name="linkedforever" extends="struts-default">
+	
 		<action name="listProvince" class="listProvinceAction">
-			<result name="success">index.jsp</result>
+			<result name="success">/WEB-INF/views/ProvinceList.jsp</result>
 		</action>
 	</package>
 </struts>

@@ -9,16 +9,23 @@
 			<generator class="increment" />
 		</id>
 		<property name="name" type="java.lang.String">
-			<column name="name" length="128" not-null="true" />
+			<column name="name" length="128" />
 		</property>
 		<property name="pwd" type="java.lang.String">
-			<column name="pwd" length="64" not-null="true"></column>
+			<column name="pwd" length="64" not-null="true" />
 		</property>
 		<property name="sex" type="java.lang.String">
-			<column name="sex" length="16" not-null="true"></column>
+			<column name="sex" length="16" />
 		</property>
 		<property name="tel" type="java.lang.String">
-			<column name="tel" length="16" not-null="true"></column>
+			<column name="tel" length="16" not-null="true" />
+		</property>
+		<property name="email" type="java.lang.String">
+			<column name="email" length="128" not-null="true" />
+		</property>
+		
+		<property name="birthday" type="java.lang.String">
+			<column name="birthday" length="12" />
 		</property>
 		
 		<many-to-one name="homePro" column="homePro" />

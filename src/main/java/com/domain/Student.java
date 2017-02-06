@@ -8,6 +8,8 @@ public class Student {
 	private String pwd;
 	private String sex;
 	private String tel;
+	private String email;
+	private String birthday;
 	private Province homePro;
 	private City homeCity;
 	private Set<StuUniversity> stuUniversities;
@@ -41,6 +43,18 @@ public class Student {
 	}
 	public void setTel(String tel) {
 		this.tel = tel;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getBirthday() {
+		return birthday;
+	}
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
 	}
 	public Province getHomePro() {
 		return homePro;

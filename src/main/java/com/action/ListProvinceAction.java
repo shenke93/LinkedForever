@@ -17,7 +17,6 @@ public class ListProvinceAction extends ActionSupport {
 		this.iProvinceDAO = iProvinceDAO;
 	}
 	
-	@Override
 	public String execute() throws Exception {
 		listProvince = iProvinceDAO.showProvinceList();
 		return SUCCESS;
