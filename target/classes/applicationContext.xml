@@ -99,7 +99,11 @@
 	</bean>
 	
 	<bean id="listProvinceAction" class="com.action.ListProvinceAction">
-		<property name="iProvinceDAO" ref="iProvinceDAO"></property>
+		<property name="iProvinceDAO" ref="iProvinceDAO" />
+	</bean>
+	
+	<bean id="loginAction" class="com.action.LoginAction">
+		<property name="iStudentDAO" ref="iStudentDAO" />
 	</bean>
 
 </beans>
