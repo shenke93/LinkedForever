@@ -47,6 +47,7 @@
 	<bean id="persistenceExceptionTranslationPostProcessor"
         class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
 
+<!--  
 	<bean id="iStudentDAO" class="com.dao.StudentDAO">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
@@ -66,6 +67,28 @@
 	<bean id="iUniversityDAO" class="com.dao.UniversityDAO">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+	
+	-->
+	
+	<bean id="iStudentDAO" class="com.factory.DaoFactory" factory-method="getStudentDAO">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="iCountryDAO" class="com.factory.DaoFactory" factory-method="getCountryDAO">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="iProvinceDAO" class="com.factory.DaoFactory" factory-method="getProvinceDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="iCityDAO" class="com.factory.DaoFactory" factory-method="getCityDAO">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="iUniversityDAO" class="com.factory.DaoFactory" factory-method="getUniversityDAO">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
 
 	<bean id="testAction" class="com.test.TestAction">
 		<property name="iStudentDAO" ref="iStudentDAO" />
@@ -73,6 +96,10 @@
 		<property name="iProvinceDAO" ref="iProvinceDAO" />
 		<property name="iCityDAO" ref="iCityDAO" />
 		<property name="iUniversityDAO" ref="iUniversityDAO" />
+	</bean>
+	
+	<bean id="listProvinceAction" class="com.action.ListProvinceAction">
+		<property name="iProvinceDAO" ref="iProvinceDAO"></property>
 	</bean>
 
 </beans>
