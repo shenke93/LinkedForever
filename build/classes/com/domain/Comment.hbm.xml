@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.domain">
+	<class name="Comment" table="comment">
+		<id name="id" column="id" type="java.lang.Integer">
+			<generator class="increment" />
+		</id>
+		<property name="content" type="java.lang.String">
+			<column name="content" length="128" />
+		</property>
+		
+		<many-to-one name="post" column="post_id" />
+		<many-to-one name="photo" column="photo_id" />
+		<many-to-one name="student" column="student_id" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+				http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localHost:3306/LinkedForever" />
+		<property name="username" value="root" />
+		<property name="password" value="LIU199288" />
+		<property name="initialSize" value="3" />
+		<property name="maxActive" value="500" />
+		<property name="maxIdle" value="2" />
+		<property name="minIdle" value="1" />
+	</bean>
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mappingResources">
+			<list>
+				<value>com/domain/Country.hbm.xml</value>
+				<value>com/domain/Province.hbm.xml</value>
+				<value>com/domain/City.hbm.xml</value>
+				<value>com/domain/University.hbm.xml</value>
+				<value>com/domain/PrimarySchool.hbm.xml</value>
+				<value>com/domain/JuniorSchool.hbm.xml</value>
+				<value>com/domain/SeniorSchool.hbm.xml</value>
+				<value>com/domain/Student.hbm.xml</value>
+				<value>com/domain/StuUniversity.hbm.xml</value>
+				<value>com/domain/Photo.hbm.xml</value>
+				<value>com/domain/Post.hbm.xml</value>
+				<value>com/domain/Comment.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<value>
+				hibernate.dialect = org.hibernate.dialect.MySQLDialect
+				hibernate.hbm2ddl.auto = update
+				hibernate.show_sql = true
+			</value>
+		</property>
+	</bean>
+	
+	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<tx:annotation-driven transaction-manager="txManager" />
+	
+	<bean id="iStudentDAO" class="com.factory.DaoFactory" factory-method="getStudentDAO">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="iCountryDAO" class="com.factory.DaoFactory" factory-method="getCountryDAO">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="iProvinceDAO" class="com.factory.DaoFactory" factory-method="getProvinceDAO">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="iCityDAO" class="com.factory.DaoFactory" factory-method="getCityDAO">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="iUniversityDAO" class="com.factory.DaoFactory" factory-method="getUniversityDAO">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean name="/login" class="com.action.LoginAction" scope="prototype">
+		<property name="iStudentDAO" ref="iStudentDAO" />
+	</bean>
+	
+	<bean name="/signup" class="com.action.SignupAction" scope="prototype">
+		<property name="iStudentDAO" ref="iStudentDAO" />
+	</bean>
+	
+	<bean id="testAction" class="com.test.TestAction">
+		<property name="iProvinceDAO" ref="iProvinceDAO" />
+		<property name="iStudentDAO" ref="iStudentDAO" />
+	</bean>
+	
+</beans>
