@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+  <form-beans>
+    <form-bean name="loginForm" type="com.form.LoginForm" />
+    <form-bean name="signupForm" type="com.form.SignupForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  
+  <action-mappings>
+    <action
+      attribute="loginForm"
+      input="/WEB-INF/signin.html"
+      name="loginForm"
+      parameter="flag"
+      path="/login"
+      scope="request"
+      type="com.action.LoginAction"
+      validate="false"
+      cancellable="true" />
+    <action
+      attribute="signupForm"
+      input="/WEB-INF/signup/signups3.html"
+      name="signupForm"
+      parameter="flag"
+      path="/signup"
+      scope="request"
+      type="com.action.SignupAction"
+      validate="false"
+      cancellable="true">
+      <forward name="tosignup2" path="/WEB-INF/signup/signups2.html" />
+      <forward name="tosignup3" path="/WEB-INF/signup/signups3.html" />
+    </action>
+
+
+  </action-mappings>
+  
+  <controller>
+		<set-property property="processorClass" value="org.springframework.web.struts.DelegatingRequestProcessor" />
+  </controller>
+  
+</struts-config>
+
