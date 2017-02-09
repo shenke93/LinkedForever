@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+				http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localHost:3306/LinkedForever" />
+		<property name="username" value="root" />
+		<property name="password" value="LIU199288" />
+		<property name="initialSize" value="3" />
+		<property name="maxActive" value="500" />
+		<property name="maxIdle" value="2" />
+		<property name="minIdle" value="1" />
+	</bean>
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mappingResources">
+			<list>
+				<value>com/uvsq/domain/Country.hbm.xml</value>
+				<value>com/uvsq/domain/Province.hbm.xml</value>
+				<value>com/uvsq/domain/City.hbm.xml</value>
+				<value>com/uvsq/domain/University.hbm.xml</value>
+				<value>com/uvsq/domain/PrimarySchool.hbm.xml</value>
+				<value>com/uvsq/domain/JuniorSchool.hbm.xml</value>
+				<value>com/uvsq/domain/SeniorSchool.hbm.xml</value>
+				<value>com/uvsq/domain/Student.hbm.xml</value>
+				<value>com/uvsq/domain/Photo.hbm.xml</value>
+				<value>com/uvsq/domain/Post.hbm.xml</value>
+				<value>com/uvsq/domain/Comment.hbm.xml</value>
+				<value>com/uvsq/domain/Friendship.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<value>
+				hibernate.dialect = org.hibernate.dialect.MySQLDialect
+				hibernate.hbm2ddl.auto = update
+				hibernate.show_sql = true
+			</value>
+		</property>
+	</bean>
+	
+	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<tx:annotation-driven transaction-manager="txManager" />
+	
+	<bean id="iStudentDAO" class="com.uvsq.factory.DaoFactory" factory-method="getStudentDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="iCountryDAO" class="com.uvsq.factory.DaoFactory" factory-method="getCountryDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="iProvinceDAO" class="com.uvsq.factory.DaoFactory" factory-method="getProvinceDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="iCityDAO" class="com.uvsq.factory.DaoFactory" factory-method="getCityDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="iUniversityDAO" class="com.uvsq.factory.DaoFactory" factory-method="getUniversityDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="iFriendshipDAO" class="com.uvsq.factory.DaoFactory" factory-method="getFriendshipDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="iPostDAO" class="com.uvsq.factory.DaoFactory" factory-method="getPostDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean name="/welcome" class="com.uvsq.action.WelcomeAction" scope="prototype" />
+	
+	<bean name="/login" class="com.uvsq.action.LoginAction" scope="prototype">
+		<property name="iStudentDAO" ref="iStudentDAO" />
+		<property name="iFriendshipDAO" ref="iFriendshipDAO" />
+		<property name="iPostDAO" ref="iPostDAO" />
+	</bean>
+	
+	<bean name="/signup" class="com.uvsq.action.SignupAction" scope="prototype">
+		<property name="iCountryDAO" ref="iCountryDAO" />
+		<property name="iCityDAO" ref="iCityDAO" />
+		<property name="iProvinceDAO" ref="iProvinceDAO" />
+		<property name="iStudentDAO" ref="iStudentDAO" />
+		<property name="iUniversityDAO" ref="iUniversityDAO" />
+	</bean>
+	
+	<bean name="/homepage" class="com.uvsq.action.HomepageAction" scope="prototype">
+		<property name="iStudentDAO" ref="iStudentDAO" />
+		<property name="iFriendshipDAO" ref="iFriendshipDAO" />
+		<property name="iPostDAO" ref="iPostDAO" />
+	</bean>
+	
+	<bean id="testAction" class="com.uvsq.test.TestAction">
+		<property name="iCountryDAO" ref="iCountryDAO" />
+		<property name="iCityDAO" ref="iCityDAO" />
+		<property name="iProvinceDAO" ref="iProvinceDAO" />
+		<property name="iUniversityDAO" ref="iUniversityDAO" />
+		<property name="iStudentDAO" ref="iStudentDAO" />
+		<property name="iFriendshipDAO" ref="iFriendshipDAO" />
+		<property name="iPostDAO" ref="iPostDAO" />
+	</bean>
+</beans>
