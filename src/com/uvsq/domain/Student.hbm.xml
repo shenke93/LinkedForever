@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.uvsq.domain">
+	<class name="Student" table="student">
+		<id name="id" column="id" type="java.lang.Integer">
+			<generator class="increment" />
+		</id>
+		<property name="name" type="java.lang.String">
+			<column name="name" length="128" />
+		</property>
+		<property name="email" type="java.lang.String">
+			<column name="email" length="128" not-null="true" />
+		</property>
+		<property name="pwd" type="java.lang.String">
+			<column name="pwd" length="64" not-null="true" />
+		</property>
+		<property name="sex" type="java.lang.String">
+			<column name="sex" length="16" />
+		</property>
+		<property name="tel" type="java.lang.String">
+			<column name="tel" length="16" not-null="true" />
+		</property>
+		<property name="birthday" type="java.lang.String">
+			<column name="birthday" length="12" />
+		</property>
+		
+		<many-to-one name="homeCountry" column="homeCountry" />
+		<many-to-one name="homePro" column="homePro" />
+		<many-to-one name="homeCity" column="homeCity" />
+		<many-to-one name="university" column="universityId" />
+		
+		<set name="posts">
+			<key column="student_id" />
+			<one-to-many class="com.uvsq.domain.Post" />
+		</set>
+		
+		<set name="photos">
+			<key column="student_id" />
+			<one-to-many class="com.uvsq.domain.Photo" />
+		</set>
+		
+		<set name="requestedFriends">
+			<key column="requested_id" />
+			<one-to-many class="com.uvsq.domain.Friendship" />
+		</set>
+		
+		<set name="receivedFriends">
+			<key column="received_id" />
+			<one-to-many class="com.uvsq.domain.Friendship" />
+		</set>
+	</class>
+</hibernate-mapping>

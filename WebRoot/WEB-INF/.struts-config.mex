@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/login.do" location="375,45" dimension="200,88" />
+  <StrutsActivity path="/signup.do" location="375,180" dimension="207,88" />
+  <StrutsActivity path="/welcome.do" location="-225,120" dimension="218,88" />
+  <StrutsActivity path="/homepage.do" location="930,45" dimension="228,88" />
+  <StrutsActivity path="/WEB-INF/welcome.html" location="-450,120" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/homepage/homepage.jsp" location="675,45" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/signin/signin.html" location="90,45" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/signup/signups2.html" location="300,345" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/signup/signups4.html" location="675,330" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/signup/signups3.html" location="675,180" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/signup/signups1.html" location="90,180" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/homepage/friendlist.jsp" location="1290,45" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/homepage/searchFriend.jsp" location="930,180" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/homepage/friendprofile.jsp" location="1290,180" dimension="150,100" />
+  <StrutsTransition id="/homepage.do,tohomepage,/WEB-INF/homepage/homepage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="930,59" />
+      <AbsolutePoint location="825,59" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/signup.do,towelcome,/WEB-INF/welcome.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="478,268" />
+      <AbsolutePoint location="478,520" />
+      <AbsolutePoint location="-375,520" />
+      <AbsolutePoint location="-375,220" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/signup.do,tohomepage,/WEB-INF/homepage/homepage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="478,180" />
+      <AbsolutePoint location="478,160" />
+      <AbsolutePoint location="750,160" />
+      <AbsolutePoint location="750,145" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/signup.do,tosignup2,/WEB-INF/signup/signups2.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="390,268" />
+      <AbsolutePoint location="390,345" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/homepage/friendprofile.jsp,null,/homepage.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1290,200" />
+      <AbsolutePoint location="1125,200" />
+      <AbsolutePoint location="1125,133" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,logout,/WEB-INF/welcome.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="475,45" />
+      <AbsolutePoint location="475,-30" />
+      <AbsolutePoint location="-375,-30" />
+      <AbsolutePoint location="-375,120" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/homepage.do,searchFriend,/WEB-INF/homepage/searchFriend.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1005,133" />
+      <AbsolutePoint location="1005,180" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/homepage/searchFriend.jsp,null,/homepage.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="975,180" />
+      <AbsolutePoint location="975,133" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/welcome.do,towelcome,/WEB-INF/welcome.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="-225,134" />
+      <AbsolutePoint location="-300,134" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/signup.do,tosignup3,/WEB-INF/signup/signups3.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="582,230" />
+      <AbsolutePoint location="675,230" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/welcome.html,null,/welcome.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="-300,164" />
+      <AbsolutePoint location="-225,164" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/welcome.do,tosignin,/WEB-INF/signin/signin.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="-7,130" />
+      <AbsolutePoint location="90,130" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,tohomepage,/WEB-INF/homepage/homepage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="575,95" />
+      <AbsolutePoint location="675,95" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/homepage.do,toprofile,/WEB-INF/homepage/friendprofile.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1095,133" />
+      <AbsolutePoint location="1095,230" />
+      <AbsolutePoint location="1290,230" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/signup.do,tosignup4,/WEB-INF/signup/signups4.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="538,268" />
+      <AbsolutePoint location="538,380" />
+      <AbsolutePoint location="675,380" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/welcome.do,tosignup,/WEB-INF/signup/signups1.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="-7,195" />
+      <AbsolutePoint location="90,195" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/signup/signups4.html,null,/signup.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="675,410" />
+      <AbsolutePoint location="508,410" />
+      <AbsolutePoint location="508,268" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/signin/signin.html,null,/login.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="240,89" />
+      <AbsolutePoint location="375,89" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/homepage.do,tofriendlist,/WEB-INF/homepage/friendlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1158,95" />
+      <AbsolutePoint location="1290,95" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/homepage/searchFriend.jsp,null,/homepage.do,0" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="975,180" />
+      <AbsolutePoint location="975,133" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/signup/signups3.html,null,/signup.do,0" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="675,260" />
+      <AbsolutePoint location="582,260" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/signup/signups1.html,null,/signup.do,0" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="240,224" />
+      <AbsolutePoint location="375,224" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/homepage/homepage.jsp,null,/homepage.do,0" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="825,89" />
+      <AbsolutePoint location="930,89" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/signup/signups2.html,null,/signup.do,0" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="435,345" />
+      <AbsolutePoint location="435,268" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+
