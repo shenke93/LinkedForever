@@ -10,9 +10,9 @@ public class StudentDAO extends BasicDAO implements IStudentDAO
 {
 	public Student checkStu(Student s) 
 	{
-		String hql = "from Student where id=:id and pwd=:pwd";
-		Object[] parameters = {s.getId(), s.getPwd()};
-		String[] parameters_name = {"id", "pwd"};
+		String hql = "from Student where name=:name and pwd=:pwd";
+		Object[] parameters = {s.getName(), s.getPwd()};
+		String[] parameters_name = {"name", "pwd"};
 		
 		return (Student) this.uniqueQuery(hql, parameters, parameters_name);
 	}

@@ -12,8 +12,8 @@
     <div align="center">
         <h1>LinkedForever</h1>
         <h2>Users Login</h2>
-        <s:form action="login" method="post">
-            <s:textfield label="Email/Tel" name="student.email" />
+        <s:form action="loginAction" namespace="/" method="post">
+            <s:textfield label="Name" name="student.name" />
             <s:password label="Password" name="student.pwd" />
             <s:submit value="Login" />
         </s:form>            

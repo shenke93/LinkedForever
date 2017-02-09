@@ -7,6 +7,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class LoginAction extends ActionSupport {
 	private IStudentDAO iStudentDAO;
 	private Student student;
+	
 	public IStudentDAO getiStudentDAO() {
 		return iStudentDAO;
 	}
@@ -20,11 +21,14 @@ public class LoginAction extends ActionSupport {
 		this.student = student;
 	}
 	
-	public String execute() throws Exception {
+	public String execute() {
+		System.out.println("I am runing LoginAction execute function!!!!");
 		if (iStudentDAO.checkStu(student) != null) {
-			return SUCCESS;
+			System.out.println("Login success!!!!!!!!!!!");
+			return "success";
 		}
-		return ERROR;
+		System.out.println("Login error!!!!!!!!!!!!!!");
+		return "error";
 	}
 	
 	

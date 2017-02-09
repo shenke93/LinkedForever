@@ -146,7 +146,15 @@ public class TestAction
 		}
 	}
 	
-	public void testStruts2() {
-		
+	public void testCheckLogin() {
+		Student s1 = new Student();
+		s1.setName("Xiaoming");
+		s1.setPwd("666");
+		s1.setTel("01234567");
+		s1.setEmail("xiaoming@gmail.com");
+		s1.setBirthday("13/10/1993");
+		s1.setSex("F");
+		Student out = iStudentDAO.checkStu(s1);
+		System.out.println(out.getName() + " " + out.getEmail());
 	}
 }

@@ -2,11 +2,11 @@ com\dao\StudentDAO.class
 com\idao\ICountryDAO.class
 com\domain\Student.class
 com\domain\JuniorSchool.class
-com\action\ListProvinceAction.class
 com\dao\BasicDAO.class
 com\idao\ICityDAO.class
 com\domain\University.class
 com\domain\SeniorSchool.class
+com\test\Main.class
 com\dao\ProvinceDAO.class
 com\dao\CityDAO.class
 com\idao\IStudentDAO.class
@@ -15,6 +15,7 @@ com\action\LoginAction.class
 com\dao\CountryDAO.class
 com\factory\DaoFactory.class
 com\domain\Country.class
+com\test\TestAction.class
 com\domain\StuUniversity.class
 com\idao\IUniversityDAO.class
 com\idao\IProvinceDAO.class
