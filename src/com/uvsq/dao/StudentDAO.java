@@ -70,4 +70,21 @@ public class StudentDAO extends BasicDAO implements IStudentDAO
 			return l2;
 		}
 	}
+
+	public boolean isExist(String email) 
+	{
+		String hql = "from Student where email=?";
+		Object[] parameters = {email};
+		
+		Student s = (Student) this.uniqueQuery(hql, parameters);
+		
+		if(s == null)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
 }

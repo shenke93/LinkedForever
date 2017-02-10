@@ -10,4 +10,5 @@ public interface IStudentDAO extends IBasicDAO
 	public List<Student> showStudentList();
 	public Student getStuById(int id);
 	public List<Student> getStuByName(String name);
+	public boolean isExist(String email);
 }

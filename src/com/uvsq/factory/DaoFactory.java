@@ -1,6 +1,7 @@
 package com.uvsq.factory;
 
 import com.uvsq.dao.CityDAO;
+import com.uvsq.dao.CommentDAO;
 import com.uvsq.dao.CountryDAO;
 import com.uvsq.dao.FriendshipDAO;
 import com.uvsq.dao.PostDAO;
@@ -8,6 +9,7 @@ import com.uvsq.dao.ProvinceDAO;
 import com.uvsq.dao.StudentDAO;
 import com.uvsq.dao.UniversityDAO;
 import com.uvsq.idao.ICityDAO;
+import com.uvsq.idao.ICommentDAO;
 import com.uvsq.idao.ICountryDAO;
 import com.uvsq.idao.IFriendshipDAO;
 import com.uvsq.idao.IPostDAO;
@@ -50,5 +52,10 @@ public class DaoFactory
 	public static final IPostDAO getPostDAO()
 	{
 		return new PostDAO();
+	}
+	
+	public static final ICommentDAO getCommentDAO()
+	{
+		return new CommentDAO();
 	}
 }
